@@ -15,6 +15,7 @@
 resource "azurerm_resource_group" "thanos" {
   name     = var.thanos_resource_group_name
   location = var.thanos_resource_group_location
+  tags     = var.tags
 }
 
 resource "azurerm_storage_account" "thanos" {

@@ -15,6 +15,7 @@
 resource "azurerm_resource_group" "loki" {
   name     = var.loki_resource_group_name
   location = var.loki_resource_group_location
+  tags     = var.tags
 }
 
 resource "azurerm_storage_account" "loki" {

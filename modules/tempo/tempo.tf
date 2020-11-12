@@ -15,6 +15,7 @@
 resource "azurerm_resource_group" "tempo" {
   name     = var.tempo_resource_group_name
   location = var.tempo_resource_group_location
+  tags     = var.tags
 }
 
 resource "azurerm_storage_account" "tempo" {
