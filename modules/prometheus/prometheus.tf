@@ -19,14 +19,14 @@ resource "azurerm_resource_group" "prometheus" {
 }
 
 resource "azurerm_storage_account" "prometheus" {
-  name                     = var.storage_account_name
-  resource_group_name      = azurerm_resource_group.prometheus.name
-  location                 = azurerm_resource_group.prometheus.location
-  account_kind             = "BlobStorage"
-  account_tier             = "Standard"
-  account_replication_type = "GRS"
-  access_tier              = "Hot"
-
+  name                      = var.storage_account_name
+  resource_group_name       = azurerm_resource_group.prometheus.name
+  location                  = azurerm_resource_group.prometheus.location
+  account_kind              = "BlobStorage"
+  account_tier              = "Standard"
+  account_replication_type  = "GRS"
+  access_tier               = "Hot"
+  min_tls_version           = "TLS1_2"
   enable_https_traffic_only = true
 
   tags = var.tags
