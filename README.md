@@ -1,5 +1,7 @@
 # Observability components into Microsoft Azure
 
+![Tfsec](https://github.com/nlamirault/terraform-azurerm-observability/workflows/Tfsec/badge.svg)
+
 This module consists of the following submodules:
 
 - [prometheus](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/prometheus)
