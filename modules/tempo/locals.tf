@@ -12,15 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "azurerm_user_assigned_identity" "thanos" {
-  name                = local.service_name
-  resource_group_name = azurerm_resource_group.thanos.name
-  location            = data.azurerm_kubernetes_cluster.aks.location
-  tags                = var.tags
-}
-
-resource "azurerm_role_assignment" "thanos" {
-  scope                = azurerm_storage_account.thanos.id
-  role_definition_name = "Contributor"
-  principal_id         = azurerm_user_assigned_identity.thanos.principal_id
+locals {
+  service_name = format("%s-tempo", var.aks_resource_group_name)
 }

@@ -12,46 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "azuread_application" "loki" {
-  name = "loki-k8s"
-}
-
-resource "azuread_service_principal" "loki" {
-  application_id               = azuread_application.loki.application_id
-  app_role_assignment_required = true
-}
-
-resource "random_string" "loki" {
-  length  = 36
-  special = false
-
-  keepers = {
-    service_principal = azuread_service_principal.loki.id
-  }
-}
-
-resource "azuread_service_principal_password" "loki" {
-  service_principal_id = azuread_service_principal.loki.id
-  value                = random_string.loki.result
-  end_date             = timeadd(timestamp(), "8760h")
-
-  # This stops be 'end_date' changing on each run and causing a new password to be set
-  # to get the date to change here you would have to manually taint this resource...
-  lifecycle {
-    ignore_changes = [end_date]
-  }
-}
-
-resource "azurerm_role_assignment" "aks" {
-  scope                            = data.azurerm_resource_group.aks.id
-  role_definition_name             = "Contributor"
-  principal_id                     = azuread_service_principal.loki.id
-  skip_service_principal_aad_check = true
+resource "azurerm_user_assigned_identity" "loki" {
+  name                = local.service_name
+  resource_group_name = azurerm_resource_group.loki.name
+  location            = data.azurerm_kubernetes_cluster.aks.location
+  tags                = var.tags
 }
 
 resource "azurerm_role_assignment" "loki" {
-  scope                            = azurerm_storage_account.loki.id
-  role_definition_name             = "Contributor"
-  principal_id                     = azuread_service_principal.loki.id
-  skip_service_principal_aad_check = true
+  scope                = azurerm_storage_account.loki.id
+  role_definition_name = "Contributor"
+  principal_id         = azurerm_user_assigned_identity.loki.principal_id
 }
