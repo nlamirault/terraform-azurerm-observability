@@ -13,11 +13,11 @@
 # limitations under the License.
 
 output "user_assigned_identity_id" {
-    value       = user_assigned_identity.loki.id
-    description = "ID of the user assigned identity"
+  value       = user_assigned_identity.loki.id
+  description = "ID of the user assigned identity"
 }
 
 output "user_assigned_identity_name" {
-    value       = user_assigned_identity.loki.name
-    description = "Name of the user assigned identity"
+  value       = user_assigned_identity.loki.name
+  description = "Name of the user assigned identity"
 }

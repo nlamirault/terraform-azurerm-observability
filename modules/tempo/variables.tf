@@ -20,6 +20,11 @@ variable "aks_resource_group_name" {
   description = "The Name which should be used for the AKS Resource Group"
 }
 
+variable "cluster_name" {
+  type        = string
+  description = "Name of the AKS cluster"
+}
+
 variable "tempo_resource_group_name" {
   type        = string
   description = "The Name which should be used for this Resource Group"
