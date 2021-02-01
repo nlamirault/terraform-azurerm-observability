@@ -1,5 +1,5 @@
 # Copyright (C) 2020 Nicolas Lamirault <nicolas.lamirault@gmail.com>
-
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,11 +13,11 @@
 # limitations under the License.
 
 output "user_assigned_identity_id" {
-    value       = user_assigned_identity.thanos.id
-    description = "ID of the user assigned identity"
+  value       = azurerm_user_assigned_identity.thanos.id
+  description = "ID of the user assigned identity"
 }
 
 output "user_assigned_identity_name" {
-    value       = user_assigned_identity.thanos.name
-    description = "Name of the user assigned identity"
+  value       = azurerm_user_assigned_identity.thanos.name
+  description = "Name of the user assigned identity"
 }
