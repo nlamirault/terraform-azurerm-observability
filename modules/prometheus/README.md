@@ -46,6 +46,7 @@ No Modules.
 
 | Name |
 |------|
+| [azurerm_kubernetes_cluster](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/data-sources/kubernetes_cluster) |
 | [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/resource_group) |
 | [azurerm_role_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/role_assignment) |
 | [azurerm_storage_account](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/storage_account) |
@@ -57,6 +58,7 @@ No Modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | aks\_resource\_group\_name | The Name which should be used for the AKS Resource Group | `string` | n/a | yes |
+| cluster\_name | Name of the AKS cluster | `string` | n/a | yes |
 | prometheus\_resource\_group\_location | The Azure Region where the Resource Group should exist | `string` | n/a | yes |
 | prometheus\_resource\_group\_name | The Name which should be used for this Resource Group | `string` | n/a | yes |
 | storage\_account\_name | Specifies the name of the storage account | `string` | n/a | yes |

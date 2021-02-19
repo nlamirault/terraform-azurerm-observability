@@ -20,10 +20,10 @@ variable "aks_resource_group_name" {
   description = "The Name which should be used for the AKS Resource Group"
 }
 
-# variable "cluster_name" {
-#   type        = string
-#   description = "Name of the AKS cluster"
-# }
+variable "cluster_name" {
+  type        = string
+  description = "Name of the AKS cluster"
+}
 
 variable "thanos_resource_group_name" {
   type        = string
