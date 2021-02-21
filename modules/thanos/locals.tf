@@ -13,5 +13,5 @@
 # limitations under the License.
 
 locals {
-  service_name = format("%s-thanos", var.aks_resource_group_name)
+  service_name = format("%s-thanos", var.resource_group_name)
 }

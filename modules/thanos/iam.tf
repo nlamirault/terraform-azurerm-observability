@@ -15,7 +15,7 @@
 resource "azurerm_user_assigned_identity" "thanos" {
   name                = local.service_name
   resource_group_name = azurerm_resource_group.thanos.name
-  location            = data.azurerm_kubernetes_cluster.aks.location
+  location            = azurerm_resource_group.thanos.location
   tags                = var.tags
 }
 

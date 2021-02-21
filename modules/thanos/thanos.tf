@@ -13,27 +13,7 @@
 # limitations under the License.
 
 resource "azurerm_resource_group" "thanos" {
-  name     = var.thanos_resource_group_name
-  location = var.thanos_resource_group_location
+  name     = var.resource_group_name
+  location = var.resource_group_location
   tags     = var.tags
-}
-
-resource "azurerm_storage_account" "thanos" {
-  name                      = var.storage_account_name
-  resource_group_name       = azurerm_resource_group.thanos.name
-  location                  = azurerm_resource_group.thanos.location
-  account_kind              = "BlobStorage"
-  account_tier              = "Standard"
-  account_replication_type  = "GRS"
-  access_tier               = "Hot"
-  min_tls_version           = "TLS1_2"
-  enable_https_traffic_only = true
-
-  tags = var.tags
-}
-
-resource "azurerm_storage_container" "thanos" {
-  name                  = var.storage_container_name
-  storage_account_name  = azurerm_storage_account.thanos.name
-  container_access_type = "private"
 }
