@@ -15,7 +15,7 @@
 resource "azurerm_user_assigned_identity" "loki" {
   name                = local.service_name
   resource_group_name = azurerm_resource_group.loki.name
-  location            = data.azurerm_kubernetes_cluster.aks.location
+  location            = azurerm_resource_group.loki.location
   tags                = var.tags
 }
 
