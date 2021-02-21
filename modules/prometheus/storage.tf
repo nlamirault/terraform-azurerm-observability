@@ -13,7 +13,7 @@
 # limitations under the License.
 
 resource "azurerm_storage_account" "prometheus" {
-  name                      = var.storage_account_name
+  name                      = local.storage_account
   resource_group_name       = azurerm_resource_group.prometheus.name
   location                  = azurerm_resource_group.prometheus.location
   account_kind              = "BlobStorage"
@@ -27,7 +27,7 @@ resource "azurerm_storage_account" "prometheus" {
 }
 
 resource "azurerm_storage_container" "prometheus" {
-  name                  = var.storage_container_name
+  name                  = local.service_name
   storage_account_name  = azurerm_storage_account.prometheus.name
   container_access_type = "private"
 }

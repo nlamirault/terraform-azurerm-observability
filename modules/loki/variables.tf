@@ -25,16 +25,6 @@ variable "resource_group_location" {
   description = "The Azure Region where the Resource Group should exist"
 }
 
-variable "storage_account_name" {
-  type        = string
-  description = "Specifies the name of the storage account"
-}
-
-variable "storage_container_name" {
-  type        = string
-  description = "The name of the Container which should be created within the Storage Account"
-}
-
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."

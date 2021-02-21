@@ -58,8 +58,6 @@ No Modules.
 |------|-------------|------|---------|:--------:|
 | resource\_group\_location | The Azure Region where the Resource Group should exist | `string` | n/a | yes |
 | resource\_group\_name | The Name which should be used for this Resource Group | `string` | n/a | yes |
-| storage\_account\_name | Specifies the name of the storage account | `string` | n/a | yes |
-| storage\_container\_name | The name of the Container which should be created within the Storage Account | `string` | n/a | yes |
 | tags | A mapping of tags to assign to the resource. | `map(string)` | <pre>{<br>  "made-by": "terraform"<br>}</pre> | no |
 
 ## Outputs

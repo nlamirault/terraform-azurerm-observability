@@ -13,7 +13,7 @@
 # limitations under the License.
 
 resource "azurerm_storage_account" "tempo" {
-  name                      = var.storage_account_name
+  name                      = local.storage_account
   resource_group_name       = azurerm_resource_group.tempo.name
   location                  = azurerm_resource_group.tempo.location
   account_kind              = "BlobStorage"
@@ -27,7 +27,7 @@ resource "azurerm_storage_account" "tempo" {
 }
 
 resource "azurerm_storage_container" "tempo" {
-  name                  = var.storage_container_name
+  name                  = local.service_name
   storage_account_name  = azurerm_storage_account.tempo.name
   container_access_type = "private"
 }
