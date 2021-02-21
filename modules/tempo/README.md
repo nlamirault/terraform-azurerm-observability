@@ -30,13 +30,13 @@ region = "...."
 | Name | Version |
 |------|---------|
 | terraform | >= 0.14.0 |
-| azurerm | 2.48.0 |
+| azurerm | >= 2.48.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | 2.48.0 |
+| azurerm | >= 2.48.0 |
 
 ## Modules
 
