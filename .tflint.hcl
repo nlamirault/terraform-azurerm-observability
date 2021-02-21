@@ -22,6 +22,6 @@ config {
 
 }
 
-plugin "azure" {
+plugin "azurerm" {
   enabled = true
 }
