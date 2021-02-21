@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright (C) 2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "azurerm_resource_group" "tempo" {
-  name     = local.service_name
-  location = var.resource_group_location
-  tags     = var.tags
+config {
+  module = false
+  force = false
+  disabled_by_default = false
+
+  ignore_module = {
+  }
+
+}
+
+plugin "azurerm" {
+  enabled = true
 }

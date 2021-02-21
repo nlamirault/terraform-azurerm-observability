@@ -13,5 +13,6 @@
 # limitations under the License.
 
 locals {
-  service_name = format("%s-prometheus", var.aks_resource_group_name)
+  service_name    = format("%s-prometheus", var.resource_group_name)
+  storage_account = replace(local.service_name, "-", "")
 }
