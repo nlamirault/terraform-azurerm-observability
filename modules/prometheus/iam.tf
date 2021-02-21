@@ -15,7 +15,7 @@
 resource "azurerm_user_assigned_identity" "prometheus" {
   name                = local.service_name
   resource_group_name = azurerm_resource_group.prometheus.name
-  location            = data.azurerm_kubernetes_cluster.aks.location
+  location            = azurerm_resource_group.prometheus.location
   tags                = var.tags
 }
 
