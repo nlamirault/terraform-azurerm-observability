@@ -4,9 +4,9 @@
 
 This module consists of the following submodules:
 
-- [prometheus](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/prometheus)
-- [thanos](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/thanos)
-- [loki](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/loki)
-- [tempo](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/tempo)
+- [Prometheus](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/prometheus)
+- [Thanos](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/thanos)
+- [Loki](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/loki)
+- [Tempo](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/tempo)
 
 See more details in each module's README.
