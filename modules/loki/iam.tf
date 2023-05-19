@@ -14,15 +14,18 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-resource "azurerm_user_assigned_identity" "loki" {
+resource "azurerm_user_assigned_identity" "this" {
   name                = local.service_name
-  resource_group_name = azurerm_resource_group.loki.name
-  location            = azurerm_resource_group.loki.location
+  resource_group_name = azurerm_resource_group.this.name
+  location            = azurerm_resource_group.this.location
   tags                = var.tags
 }
 
-resource "azurerm_role_assignment" "loki" {
-  scope                = azurerm_storage_account.loki.id
-  role_definition_name = "Contributor"
-  principal_id         = azurerm_user_assigned_identity.loki.principal_id
+resource "azurerm_federated_identity_credential" "this" {
+  name                = local.service_name
+  resource_group_name = azurerm_resource_group.this.name
+  audience            = ["api://AzureADTokenExchange"]
+  issuer              = data.azurerm_kubernetes_cluster.this.oidc_issuer_url
+  parent_id           = azurerm_user_assigned_identity.this.id
+  subject             = "system:serviceaccount:${var.namespace}:${var.service_account}"
 }

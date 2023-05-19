@@ -14,10 +14,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-resource "azurerm_storage_account" "loki" {
+resource "azurerm_storage_account" "this" {
   name                      = local.storage_account
-  resource_group_name       = azurerm_resource_group.loki.name
-  location                  = azurerm_resource_group.loki.location
+  resource_group_name       = azurerm_resource_group.this.name
+  location                  = azurerm_resource_group.this.location
   account_kind              = "BlobStorage"
   account_tier              = "Standard"
   account_replication_type  = "GRS"
@@ -28,8 +28,8 @@ resource "azurerm_storage_account" "loki" {
   tags = var.tags
 }
 
-resource "azurerm_storage_container" "loki" {
+resource "azurerm_storage_container" "this" {
   name                  = local.service_name
-  storage_account_name  = azurerm_storage_account.loki.name
+  storage_account_name  = azurerm_storage_account.this.name
   container_access_type = "private"
 }
