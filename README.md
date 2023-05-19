@@ -10,7 +10,3 @@ This module consists of the following submodules:
 - [tempo](https://github.com/nlamirault/terraform-azure-observability/tree/master/modules/tempo)
 
 See more details in each module's README.
-
-## Terraform versions
-
-Use Terraform `>= 0.13.3` minimum and Terraform Provider Azure `2.3+`.
