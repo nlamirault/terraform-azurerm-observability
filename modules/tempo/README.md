@@ -29,41 +29,41 @@ region = "...."
 
 | Name | Version |
 |------|---------|
-| terraform | >= 1.0.0 |
-| azurerm | >= 2.48.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.48.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 2.48.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 2.48.0 |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/resource_group) |
-| [azurerm_role_assignment](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/role_assignment) |
-| [azurerm_storage_account](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/storage_account) |
-| [azurerm_storage_container](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/storage_container) |
-| [azurerm_user_assigned_identity](https://registry.terraform.io/providers/hashicorp/azurerm/2.48.0/docs/resources/user_assigned_identity) |
+| Name | Type |
+|------|------|
+| [azurerm_resource_group.tempo](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
+| [azurerm_role_assignment.tempo](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
+| [azurerm_storage_account.tempo](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
+| [azurerm_storage_container.tempo](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container) | resource |
+| [azurerm_user_assigned_identity.tempo](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| resource\_group\_location | The Azure Region where the Resource Group should exist | `string` | n/a | yes |
-| resource\_group\_name | The Name which should be used for this Resource Group | `string` | n/a | yes |
-| tags | A mapping of tags to assign to the resource. | `map(string)` | <pre>{<br>  "made-by": "terraform"<br>}</pre> | no |
+| <a name="input_resource_group_location"></a> [resource\_group\_location](#input\_resource\_group\_location) | The Azure Region where the Resource Group should exist | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The Name which should be used for this Resource Group | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resource. | `map(string)` | <pre>{<br>  "made-by": "terraform"<br>}</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| user\_assigned\_identity\_id | ID of the user assigned identity |
-| user\_assigned\_identity\_name | Name of the user assigned identity |
+| <a name="output_user_assigned_identity_id"></a> [user\_assigned\_identity\_id](#output\_user\_assigned\_identity\_id) | ID of the user assigned identity |
+| <a name="output_user_assigned_identity_name"></a> [user\_assigned\_identity\_name](#output\_user\_assigned\_identity\_name) | Name of the user assigned identity |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
