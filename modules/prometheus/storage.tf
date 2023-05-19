@@ -16,8 +16,8 @@
 
 resource "azurerm_storage_account" "prometheus" {
   name                      = local.storage_account
-  resource_group_name       = azurerm_resource_group.prometheus.name
-  location                  = azurerm_resource_group.prometheus.location
+  resource_group_name       = azurerm_resource_group.this.name
+  location                  = azurerm_resource_group.this.location
   account_kind              = "BlobStorage"
   account_tier              = "Standard"
   account_replication_type  = "GRS"

@@ -26,6 +26,6 @@ resource "azurerm_federated_identity_credential" "this" {
   resource_group_name = azurerm_resource_group.this.name
   audience            = ["api://AzureADTokenExchange"]
   issuer              = data.azurerm_kubernetes_cluster.this.oidc_issuer_url
-  parent_id           = "azurerm_user_assigned_identity.WorkloadManagedIdentity.id"
+  parent_id           = azurerm_user_assigned_identity.this.id
   subject             = "system:serviceaccount:${var.namespace}:${var.service_account}"
 }
