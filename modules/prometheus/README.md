@@ -69,6 +69,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_user_assigned_identity_id"></a> [user\_assigned\_identity\_id](#output\_user\_assigned\_identity\_id) | ID of the user assigned identity |
+| <a name="output_azurerm_federated_identity_credential_id"></a> [azurerm\_federated\_identity\_credential\_id](#output\_azurerm\_federated\_identity\_credential\_id) | ID of the user assigned identity |
 | <a name="output_user_assigned_identity_name"></a> [user\_assigned\_identity\_name](#output\_user\_assigned\_identity\_name) | Name of the user assigned identity |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
