@@ -17,4 +17,9 @@
 locals {
   service_name    = format("%s-loki", var.resource_group_name)
   storage_account = replace(local.service_name, "-", "")
+  buckets_names = [
+    "admin",
+    "chunks",
+    "ruler"
+  ]
 }

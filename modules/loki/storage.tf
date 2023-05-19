@@ -29,7 +29,9 @@ resource "azurerm_storage_account" "this" {
 }
 
 resource "azurerm_storage_container" "this" {
-  name                  = local.service_name
+  for_each = toset(local.buckets_names)
+
+  name                  = format("%s-%s", var.bucket_name, each.value)
   storage_account_name  = azurerm_storage_account.this.name
   container_access_type = "private"
 }
