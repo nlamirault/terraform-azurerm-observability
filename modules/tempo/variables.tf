@@ -27,6 +27,11 @@ variable "resource_group_location" {
   description = "The Azure Region where the Resource Group should exist"
 }
 
+variable "bucket_name" {
+  type        = string
+  description = "Name of the bucket"
+}
+
 variable "cluster_name" {
   type        = string
   description = "Name of the EKS cluster"
