@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
 # Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +24,10 @@ terraform {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = ">= 3.31.0"
+    }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = ">= 3.0.0"
     }
   }
 }
