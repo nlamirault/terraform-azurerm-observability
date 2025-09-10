@@ -1,7 +1,7 @@
 # Observability components into Microsoft Azure
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/10881/badge)](https://www.bestpractices.dev/en/projects/10881)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/11158/badge)](https://www.bestpractices.dev/en/projects/11158)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/nlamirault/terraform-azurerm-observability/badge)](https://securityscorecards.dev/viewer/?uri=github.com/nlamirault/terraform-azurerm-observability)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 
