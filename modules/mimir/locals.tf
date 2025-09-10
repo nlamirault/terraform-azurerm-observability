@@ -10,5 +10,4 @@ locals {
     "ruler",
     "tsdb"
   ]
-  list_tags = [for k, v in var.tags : "${k}:${v}"]
 }

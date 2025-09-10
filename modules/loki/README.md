@@ -31,14 +31,14 @@ region = "...."
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | >= 3.0.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 4.0.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.31.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 3.5.0 |
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.43.0 |
+| <a name="provider_azuread"></a> [azuread](#provider\_azuread) | >= 3.0.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.57.0 |
 
 ## Modules
 
@@ -74,5 +74,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_azurerm_federated_identity_credential_id"></a> [azurerm\_federated\_identity\_credential\_id](#output\_azurerm\_federated\_identity\_credential\_id) | ID of the application federated identity |
+| <a name="output_azurerm_federated_identity_credential_id"></a> [azurerm\_federated\_identity\_credential\_id](#output\_azurerm\_federated\_identity\_credential\_id) | ID of the user assigned identity |
+| <a name="output_user_assigned_identity_name"></a> [user\_assigned\_identity\_name](#output\_user\_assigned\_identity\_name) | Name of the user assigned identity |
 <!-- END_TF_DOCS -->

@@ -3,19 +3,20 @@
 
 resource "azuread_application" "this" {
   display_name = local.service_name
-  tags         = local.list_tags
+  tags         = var.tags
 }
 
 resource "azuread_service_principal" "this" {
   client_id   = azuread_application.this.client_id
   description = local.service_name
-  tags        = local.list_tags
+  tags        = var.tags
 }
 
 resource "azuread_application_federated_identity_credential" "this" {
-  application_id = azuread_application.this.id
-  display_name   = local.service_name
-  audiences      = ["api://AzureADTokenExchange"]
-  issuer         = data.azurerm_kubernetes_cluster.this.oidc_issuer_url
-  subject        = "system:serviceaccount:${var.namespace}:${var.service_account}"
+  application_id      = azuread_application.this.id
+  display_name        = local.service_name
+  resource_group_name = azurerm_resource_group.this.name
+  audiences           = ["api://AzureADTokenExchange"]
+  issuer              = data.azurerm_kubernetes_cluster.this.oidc_issuer_url
+  subject             = "system:serviceaccount:${var.namespace}:${var.service_account}"
 }
