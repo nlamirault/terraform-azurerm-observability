@@ -10,4 +10,5 @@ locals {
     "chunks",
     "ruler"
   ]
+  list_tags = [for k, v in var.tags : "${k}:${v}"]
 }

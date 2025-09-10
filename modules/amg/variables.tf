@@ -20,6 +20,12 @@ variable "prometheus_name" {
   description = "The Prometheus managed name"
 }
 
+variable "grafana_major_version" {
+  type        = number
+  description = "Which major version of Grafana to deploy"
+  default     = 12
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resource."
