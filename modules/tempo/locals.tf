@@ -9,4 +9,5 @@ locals {
   buckets_names = [
     "chunks",
   ]
+  list_tags = [for k, v in var.tags : "${k}:${v}"]
 }
