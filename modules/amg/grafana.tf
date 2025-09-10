@@ -13,6 +13,8 @@ resource "azurerm_dashboard_grafana" "this" {
   sku                               = "Standard"
   zone_redundancy_enabled           = true
 
+  grafana_major_version = var.grafana_major_version
+
   azure_monitor_workspace_integrations {
     resource_id = azapi_resource.prometheus.id
   }
